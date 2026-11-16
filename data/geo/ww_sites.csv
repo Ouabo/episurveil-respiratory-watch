@@ -1,0 +1,170 @@
+standort,bundesland,lat,lon,query,ok
+Aachen,NW,50.776351,6.083862,Aachen,True
+Aalen,BW,48.8375607,10.0929593,Aalen,True
+Altötting,BY,48.2268085,12.6757914,Altötting,True
+Andernach,RP,50.4391924,7.4023145,Andernach,True
+Arnstadt,TH,50.8013272,10.9556318,Arnstadt,True
+Aschaffenburg,BY,49.9706701,9.1384857,Aschaffenburg,True
+Augsburg,BY,48.3690341,10.8979522,Augsburg,True
+Bad Kreuznach,RP,49.8153468,7.9125221,Bad Kreuznach,True
+Bad Mergentheim,BW,49.4907909,9.77317,Bad Mergentheim,True
+Bad Reichenhall,BY,47.7222676,12.8760923,Bad Reichenhall,True
+Bautzen,SN,51.1809132,14.4276003,Bautzen,True
+Bayreuth,BY,49.9446345,11.5743543,Bayreuth,True
+Berchtesgaden,BY,47.6330221,13.0020051,Berchtesgaden,True
+Berg,BW,47.8148793,9.5962961,Berg,True
+Berlin Ruhleben,BE,52.5292367,13.2258772,Berlin Ruhleben,True
+Berlin Schönerlinde,BE,52.503379,13.3386522,Berlin,True
+Berlin Waßmannsdorf,BE,52.533379000000004,13.3686522,Berlin,True
+Bernburg,ST,51.7939656,11.7373854,Bernburg,True
+Bielefeld,NW,52.0191005,8.531007,Bielefeld,True
+Bonn,NW,50.7352621,7.1024635,Bonn,True
+Borken,NW,51.8444777,6.8583277,Borken,True
+Bottrop,NW,51.521581,6.929204,Bottrop,True
+Bramsche,NI,52.4200623,8.0118561,Bramsche,True
+Brandenburg an der Havel,BB,52.4108261,12.5497933,Brandenburg an der Havel,True
+Braunschweig,NI,52.2646577,10.5236066,Braunschweig,True
+Bremen,HB,53.0758196,8.8071646,Bremen,True
+Büdingen,HE,50.2972353,9.0990829,Büdingen,True
+Celle,NI,52.624056,10.081052,Celle,True
+Chemnitz,SN,50.8323531,12.918914,Chemnitz,True
+Cottbus,BB,51.7567447,14.3357307,Cottbus,True
+Darmstadt,HE,49.872775,8.651177,Darmstadt,True
+Dessau,ST,51.8309956,12.2430723,Dessau,True
+Dinslaken,NW,51.5623618,6.7345106,Dinslaken,True
+Donaueschingen,BW,47.9534194,8.4959257,Donaueschingen,True
+Dortmund-Deusen,NW,51.5507451,7.4170884,Dortmund-Deusen,True
+Dortmund-Scharnhorst,NW,51.5383114,7.5364322,Dortmund-Scharnhorst,True
+Dresden,SN,51.0493286,13.7381437,Dresden,True
+Duisburg,NW,51.434999,6.759562,Duisburg,True
+Döbeln,SN,51.1269973,13.1365727,Döbeln,True
+Düsseldorf (Nord),NW,51.2740764,6.8106159,Düsseldorf (Nord),True
+Düsseldorf (Süd),NW,51.1979924,6.8362486,Düsseldorf (Süd),True
+Ebersbach,SN,50.3645048,12.1751371,Ebersbach,True
+Ebersberg,BY,48.0782763,11.9694372,Ebersberg,True
+Emschermündung,NW,51.5622379,6.6916755,Emschermündung,True
+Erfurt,TH,50.9777974,11.0287364,Erfurt,True
+Eriskirch,BW,47.6287757,9.5302479,Eriskirch,True
+Erlangen,BY,49.5891571,10.9812072,Erlangen,True
+Eschweiler,NW,50.8175029,6.2630894,Eschweiler,True
+Flensburg,SH,54.7833021,9.4333264,Flensburg,True
+Frankfurt (Oder),BB,52.3412273,14.549452,Frankfurt (Oder),True
+Frankfurt-Griesheim,HE,50.0961119,8.5879904,Frankfurt-Griesheim,True
+Frankfurt-Niederrad,HE,50.0807744,8.6372448,Frankfurt-Niederrad,True
+Frankfurt-Sindlingen,HE,50.0875382,8.5123032,Frankfurt-Sindlingen,True
+Freilassing,BY,47.8409723,12.9823914,Freilassing,True
+Freising,BY,48.4008273,11.7439565,Freising,True
+Fulda,HE,50.5514658,9.6762161,Fulda,True
+Gera,TH,50.8765528,12.0832674,Gera,True
+Germersheim,RP,49.2222749,8.36659,Germersheim,True
+Gerwisch,ST,52.1753416,11.7454221,Gerwisch,True
+Gleisdreieck,TH,50.8203598,10.3771838,Gleisdreieck,True
+Glonn,BY,47.9878929,11.8656334,Glonn,True
+Grafing,BY,48.0453808,11.966071,Grafing,True
+Greifswald,MV,54.095791,13.3815238,Greifswald,True
+Grimma,SN,51.2366433,12.7288965,Grimma,True
+Grömitz,SH,54.1441095,10.9588499,Grömitz,True
+Göppingen,BW,48.7031377,9.6541116,Göppingen,True
+Görlitz,SN,51.1563185,14.991018,Görlitz,True
+Göttingen,NI,51.5328328,9.9351811,Göttingen,True
+Gütersloh,NW,51.9166621,8.4043282,Gütersloh,True
+Hagen,NW,51.3582945,7.473296,Hagen,True
+Halberstadt,ST,51.8953514,11.0520563,Halberstadt,True
+Halle (Saale),ST,51.4824354,11.9712985,Halle (Saale),True
+Hamburg 01,HH,53.5909051,9.9753758,Hamburg,True
+Hamburg 02,HH,53.6209051,10.0053758,Hamburg,True
+Hanau,HE,50.132881,8.9169797,Hanau,True
+Hannover-Gümmerwald,NI,52.3744779,9.7385532,Hannover,True
+Hannover-Herrenhausen,NI,52.4209631,9.6321004,Hannover-Herrenhausen,True
+Heidelberg,BW,49.4093582,8.694724,Heidelberg,True
+Hetlingen,SH,53.6077257,9.6373366,Hetlingen,True
+Hildesheim,NI,52.1527188,9.9518083,Hildesheim,True
+Hof,BY,50.3187507,11.9162992,Hof,True
+Husum,SH,54.4854137,9.0537941,Husum,True
+Ilmenau,TH,50.6867695,10.9142385,Ilmenau,True
+Ingolstadt,BY,48.7630165,11.4250395,Ingolstadt,True
+Jena,TH,50.9281717,11.5879359,Jena,True
+Kaiserslautern,RP,49.4432174,7.7689951,Kaiserslautern,True
+Karlsruhe,BW,49.0068705,8.4034195,Karlsruhe,True
+Kassel,HE,51.3157833,9.4978479,Kassel,True
+Kellinghusen,SH,53.949549,9.7188996,Kellinghusen,True
+Kiel,SH,54.3227085,10.135555,Kiel,True
+Koblenz,RP,50.3533278,7.5943951,Koblenz,True
+Köln,NW,50.938361,6.959974,Köln,True
+Königsbach,BW,48.9665979,8.6080582,Königsbach,True
+Königsbrunn,BY,48.2679546,10.8883816,Königsbrunn,True
+Köthen,ST,51.751033,11.973698,Köthen,True
+Landau in der Pfalz,RP,49.1982825,8.1123441,Landau in der Pfalz,True
+Leinetal,TH,51.3767626,10.2044341,Leinetal,True
+Leipzig,SN,51.3406321,12.3747329,Leipzig,True
+Leonberg,BW,48.8012983,9.0150026,Leonberg,True
+Linsenstein,TH,51.3192693,11.1940435,Linsenstein,True
+Ludwigshafen (BASF),RP,49.518241,8.4212782,Ludwigshafen (BASF),True
+Lübeck,SH,53.866444,10.684738,Lübeck,True
+Mainz,RP,49.9995205,8.2736253,Mainz,True
+Marburg,HE,50.8090106,8.7704695,Marburg,True
+Markkleeberg,SN,51.2785751,12.3718819,Markkleeberg,True
+Meuselwitz,TH,51.0475,12.2975,Meuselwitz,True
+Montabaur,RP,50.4362219,7.8302494,Montabaur,True
+Mönchengladbach,NW,51.1947131,6.4353792,Mönchengladbach,True
+Mühlacker-Lomersheim,BW,48.9358763,8.8578159,Mühlacker-Lomersheim,True
+München,BY,48.1371079,11.5753822,München,True
+Münster,NW,51.9625101,7.6251879,Münster,True
+Naumburg,ST,51.1525648,11.8099186,Naumburg,True
+Neu-Ulm,BY,48.3953489,10.0005211,Neu-Ulm,True
+Neubrandenburg,MV,53.5574458,13.2602781,Neubrandenburg,True
+Neustadt an der Weinstraße,RP,49.3536057,8.1360247,Neustadt an der Weinstraße,True
+Nordhausen,TH,51.5051574,10.7925317,Nordhausen,True
+Nürnberg,BY,49.453872,11.077298,Nürnberg,True
+Offenburg,BW,48.4695984,7.9429235,Offenburg,True
+Oldenburg,NI,53.1389753,8.2146017,Oldenburg,True
+Osnabrück,NI,52.2719595,8.047635,Osnabrück,True
+Paderborn,NW,51.7177044,8.752653,Paderborn,True
+Passau,BY,48.5748229,13.4609744,Passau,True
+Pforzheim,BW,48.890934,8.7025509,Pforzheim,True
+Piding,BY,47.7648237,12.9124872,Piding,True
+Pirmasens-Blümelstal,RP,49.1996961,7.6087847,Pirmasens,True
+Pirmasens-Felsalbe,RP,49.2296961,7.6387847,Pirmasens,True
+Plauen,SN,50.4950632,12.1346523,Plauen,True
+Potsdam,BB,52.4009309,13.0591397,Potsdam,True
+Ratzeburg,SH,53.7011061,10.774288,Ratzeburg,True
+Regensburg,BY,49.0195333,12.0974869,Regensburg,True
+Rollsdorf,ST,51.4904614,11.7275655,Rollsdorf,True
+Rostock,MV,54.0886707,12.1400211,Rostock,True
+Saalfeld,TH,50.6479143,11.3610041,Saalfeld,True
+Saarbrücken,SL,49.234362,6.996379,Saarbrücken,True
+Saarlouis,SL,49.3164661,6.749846,Saarlouis,True
+Schleswig,SH,54.51851,9.5653284,Schleswig,True
+Schmalkalden,TH,50.7213643,10.4510467,Schmalkalden,True
+Schwabmünchen,BY,48.1805562,10.7578121,Schwabmünchen,True
+Schweinfurt,BY,50.0451485,10.2340647,Schweinfurt,True
+Schwerin,MV,53.6288297,11.4148038,Schwerin,True
+Schwäbisch Hall,BW,49.1124305,9.7371246,Schwäbisch Hall,True
+Schönebeck,ST,52.0205998,11.7383277,Schönebeck,True
+Silstedt,ST,51.8457275,10.8530987,Silstedt,True
+Speyer,RP,49.3165553,8.433615,Speyer,True
+Stadtbergen,BY,48.3666284,10.8442814,Stadtbergen,True
+Starnberg,BY,47.9986851,11.3410791,Starnberg,True
+Stendal,ST,52.6050782,11.8594279,Stendal,True
+Straubing,BY,48.8839157,12.5955773,Straubing,True
+Stuttgart,BW,48.7784485,9.1800132,Stuttgart,True
+Suhl,TH,50.6086518,10.6926437,Suhl,True
+Teisendorf,BY,47.8477003,12.8151867,Teisendorf,True
+Trier,RP,49.7596208,6.6441878,Trier,True
+Tübingen,BW,48.5203263,9.053596,Tübingen,True
+Waldbröl,NW,50.8751813,7.6159479,Waldbröl,True
+Weiden,BY,49.6768,12.1561,Weiden in der Oberpfalz (manual),True
+Weil am Rhein,BW,47.5932802,7.6116133,Weil am Rhein,True
+Weimar,TH,50.9793301,11.3297921,Weimar,True
+Weißenfels,ST,51.1999793,11.9667857,Weißenfels,True
+Wellesweiler,SL,49.346475,7.222753,Wellesweiler,True
+Wiesbaden-Biebrich,HE,50.0488229,8.2363412,Wiesbaden-Biebrich,True
+Wiesbaden-Stadt,HE,50.0825849,8.2373407,Wiesbaden-Stadt,True
+Wolfsburg,NI,52.4205588,10.7861682,Wolfsburg,True
+Worms,RP,49.6302618,8.3620898,Worms,True
+Wuppertal,NW,51.264018,7.1780374,Wuppertal,True
+Wustweiler,SL,49.3988909,7.0371179,Wustweiler,True
+Zeitz,ST,51.0491637,12.1349991,Zeitz,True
+Zittau,SN,50.9097785,14.8008877,Zittau,True
+Zusmarshausen,BY,48.3996568,10.5964024,Zusmarshausen,True
+Zweibrücken,RP,49.248655,7.3641981,Zweibrücken,True
