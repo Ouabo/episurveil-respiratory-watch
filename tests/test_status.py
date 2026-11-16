@@ -41,7 +41,7 @@ def test_weekly_status_uses_past_seasons_only_and_flags_stale():
     b = _series("B", weeks[:-12], vals[:-12])     # stops reporting three months earlier
     s = weekly_status(pd.concat([a, b]), "place").set_index("place")
     assert s.loc["A", "level"] == "very_high" and s.loc["A", "trend"] == "rising" and s.loc["A", "fresh"]
-    assert not s.loc["B", "fresh"] and s.loc["B", "level"] is None
+    assert not s.loc["B", "fresh"] and pd.isna(s.loc["B", "level"])
 
 
 def test_wastewater_barely_detectable_and_stale():
@@ -58,4 +58,4 @@ def test_wastewater_barely_detectable_and_stale():
     s = wastewater_status(pd.DataFrame(rows)).set_index("site")
     assert s.loc["A", "not_detected"] and s.loc["A", "trend"] == "stable"
     assert s.loc["B", "trend"] == "rising" and not s.loc["B", "not_detected"]
-    assert not s.loc["C", "fresh"] and s.loc["C", "trend"] is None
+    assert not s.loc["C", "fresh"] and pd.isna(s.loc["C", "trend"])
