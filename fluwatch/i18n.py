@@ -44,7 +44,7 @@ T = {
     "m_ww_rsv": {"en": "RSV in wastewater", "de": "RSV im Abwasser"},
     "m_ww_covid": {"en": "Coronavirus in wastewater", "de": "Coronaviren im Abwasser"},
     "u_per100k": {"en": "per 100,000 people per week", "de": "pro 100.000 Menschen pro Woche"},
-    "u_ww": {"en": "virus amount (relative)", "de": "Virusmenge (relativ)"},
+    "u_ww": {"en": "virus copies per litre", "de": "Viruskopien pro Liter"},
 
     # sentences
     "sentence": {"en": "In **{place}**, {measure_lc} are **{level}** and **{trend}**.",

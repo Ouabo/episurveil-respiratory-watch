@@ -93,10 +93,10 @@ with right:
     sm = g[g["date"] <= meas["date"].max()] if not meas.empty else g
     fig2.add_trace(go.Scatter(x=sm["date"], y=sm["smooth"], mode="lines", name=t("smoothed", L),
                               line=dict(color=INK, width=5), hoverinfo="skip"))
-    fig2.update_layout(height=480, margin=dict(l=70, r=10, t=10, b=60), plot_bgcolor="white", paper_bgcolor="white",
+    fig2.update_layout(height=480, margin=dict(l=110, r=10, t=10, b=60), plot_bgcolor="white", paper_bgcolor="white",
                        legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0),
                        xaxis=dict(showgrid=False, linecolor="#D1D5DB", tickformat="%b %y", dtick="M3", tickangle=0),
-                       yaxis=dict(title=t("u_ww", L), gridcolor="#F0F0F0", rangemode="tozero", showticklabels=False))
+                       yaxis=dict(title=t("u_ww", L), gridcolor="#F0F0F0", rangemode="tozero", tickformat="~s", nticks=6))
     st.markdown(f"**{t('last_12m', L)}**")
     st.plotly_chart(polish(fig2), width="stretch", config={"displayModeBar": False}, theme=None)
 
