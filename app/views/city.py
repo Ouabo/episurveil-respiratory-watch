@@ -5,7 +5,7 @@ import streamlit as st
 
 from fluwatch.build import STATE_NAMES
 from fluwatch.i18n import t
-from fluwatch.ui import (polish, INK, LEVEL_COLORS, LINE_LAST, badge, data_date, lang, legend_html, level_label, load,
+from fluwatch.ui import (PLOT_CONFIG, is_mobile, phone_height, polish, INK, LEVEL_COLORS, LINE_LAST, badge, data_date, lang, legend_html, level_label, load,
                          TREND_COLORS, show_table, states_geojson, trend_label)
 
 L = lang()
@@ -57,8 +57,8 @@ with left:
     fig.add_trace(base)
     fig.data = (fig.data[-1],) + fig.data[:-1]
     fig.update_geos(fitbounds="locations", visible=False, projection_type="mercator")
-    fig.update_layout(height=620, margin=dict(l=0, r=0, t=0, b=0), showlegend=False)
-    st.plotly_chart(polish(fig), width="stretch", config={"displayModeBar": False}, theme=None)
+    fig.update_layout(height=phone_height(620, 430), margin=dict(l=0, r=0, t=0, b=0), showlegend=False)
+    st.plotly_chart(polish(fig), width="stretch", config=PLOT_CONFIG, theme=None)
     st.caption(t("only_recent", L))
     if s["lat"].isna().any():
         st.caption(t("no_coords", L))
@@ -97,9 +97,17 @@ with right:
                        legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0),
                        xaxis=dict(showgrid=False, linecolor="#D1D5DB", tickformat="%b %y", dtick="M3", tickangle=0),
                        yaxis=dict(title=t("u_ww", L), gridcolor="#F0F0F0", rangemode="tozero", tickformat="~s", nticks=6))
+    if is_mobile():   # narrow screen: unit above the plot, legend below, fewer and two-line date labels
+        fig2.update_layout(height=400, margin=dict(l=4, r=6, t=34, b=4),
+                           legend=dict(orientation="h", yanchor="top", y=-0.14, x=0),
+                           xaxis=dict(dtick="M4", tickformat="%b %y", automargin=True),
+                           yaxis=dict(title=None, automargin=True))
+        fig2.add_annotation(text=t("u_ww", L), xref="paper", yref="paper", x=0, y=1.0, xanchor="left",
+                            yanchor="bottom", showarrow=False, font=dict(size=15, color=INK))
     st.markdown(f"**{t('last_12m', L)}**")
-    st.plotly_chart(polish(fig2), width="stretch", config={"displayModeBar": False}, theme=None)
+    st.plotly_chart(polish(fig2), width="stretch", config=PLOT_CONFIG, theme=None)
 
 with st.expander(t("show_table", L)):
     show_table(order, {"site": t("col_site", L), "state_name": t("col_state", L), "Level": t("level", L),
-                       "Trend": t("trend", L), "Last sample": t("col_last", L), "People": t("col_people", L)})
+                       "Trend": t("trend", L), "Last sample": t("col_last", L), "People": t("col_people", L)},
+               hide_on_phone=("state_name", "Last sample", "People"))

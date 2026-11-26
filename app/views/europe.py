@@ -2,7 +2,7 @@ import plotly.express as px
 import streamlit as st
 
 from fluwatch.i18n import t
-from fluwatch.ui import polish, LEVEL_COLORS, add_keys, show_table, badge, data_date, lang, legend_html, level_label, load, season_chart, sentence, trend_label
+from fluwatch.ui import PLOT_CONFIG, phone_height, polish, LEVEL_COLORS, add_keys, show_table, badge, data_date, lang, legend_html, level_label, load, season_chart, sentence, trend_label
 
 L = lang()
 st.title(t("eu_title", L))
@@ -32,9 +32,9 @@ fig = px.choropleth(s.dropna(subset=["iso3"]), locations="iso3", locationmode="I
 fig.update_traces(marker_line_color="white", marker_line_width=1)
 fig.update_geos(showcountries=True, countrycolor="#FFFFFF", showland=True, landcolor="#F3F4F6",
                 showframe=False, projection_type="natural earth", lataxis_range=[34, 71], lonaxis_range=[-25, 40])
-fig.update_layout(height=560, margin=dict(l=0, r=0, t=0, b=0), showlegend=False)
+fig.update_layout(height=phone_height(560, 380), margin=dict(l=0, r=0, t=0, b=0), showlegend=False)
 st.markdown(legend_html(), unsafe_allow_html=True)
-st.plotly_chart(polish(fig), width="stretch", config={"displayModeBar": False}, theme=None)
+st.plotly_chart(polish(fig), width="stretch", config=PLOT_CONFIG, theme=None)
 
 countries = sorted(s["country"])
 default = countries.index("Germany") if "Germany" in countries else 0
@@ -46,10 +46,10 @@ st.caption(t("as_of", L).format(date=data_date(row["date"])))
 st.markdown(f"**{t('chart_title', L)}**")
 unit = t("u_per100k", L)
 st.plotly_chart(polish(season_chart(eu[eu["country"] == country], row, unit)), width="stretch",
-                config={"displayModeBar": False}, theme=None)
+                config=PLOT_CONFIG, theme=None)
 st.caption(t("bands_note", L))
 
 with st.expander(t("show_table", L)):
     show_table(add_keys(s).sort_values("country"), {
         "country": t("col_country", L), "Level": t("level", L), "Trend": t("trend", L),
-        "Measure": t("col_measure", L), "Week": t("col_week", L)})
+        "Measure": t("col_measure", L), "Week": t("col_week", L)}, hide_on_phone=("Measure", "Week"))

@@ -148,7 +148,7 @@ if len(watch):
     tab["Level"] = [level_label(x) for x in tab["level"]]
     tab["Trend"] = [trend_label(x) for x in tab["trend"]]
     show_table(tab.head(12), {"place": t("col_place", L), "type": "", "what": t("col_what", L),
-                              "Level": t("level", L), "Trend": t("trend", L)})
+                              "Level": t("level", L), "Trend": t("trend", L)}, hide_on_phone=("type",))
 else:
     st.success(t("head_calm", L))
 

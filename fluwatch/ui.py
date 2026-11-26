@@ -22,6 +22,26 @@ LINE_NOW, LINE_LAST, LINE_BEFORE = "#111111", "#5B6270", "#A3A9B3"
 TREND_COLORS = {"rising": "#C2410C", "stable": "#6B7280", "falling": "#2563EB", "none": "#E5E7EB"}
 TREND_BG = {"rising": "#FDE8DC", "stable": "#F1F2F4", "falling": "#E0EAFD"}
 CHART_FONT = 20
+CHART_FONT_PHONE = 15
+# no toolbar, no zoom by wheel/double-click; with layout.dragmode=False a swipe on a chart scrolls the page
+PLOT_CONFIG = {"displayModeBar": False, "scrollZoom": False, "doubleClick": False}
+
+
+def is_mobile() -> bool:
+    """True for phones (browser user agent). Used to shrink chart fonts/heights; desktop layout is unchanged."""
+    try:
+        ua = st.context.headers.get("User-Agent", "") or ""
+    except Exception:
+        return False
+    return any(k in ua for k in ("Mobi", "iPhone", "Android"))
+
+
+def chart_font() -> int:
+    return CHART_FONT_PHONE if is_mobile() else CHART_FONT
+
+
+def phone_height(desktop: int, phone: int) -> int:
+    return phone if is_mobile() else desktop
 
 
 def style_table(df: pd.DataFrame, level_col: str, trend_col: str, level_key: str = "level_key",
@@ -51,8 +71,11 @@ def add_keys(s: pd.DataFrame) -> pd.DataFrame:
     return s
 
 
-def show_table(df: pd.DataFrame, columns: dict):
-    """columns: source column -> header shown. Must contain 'Level' and 'Trend'; df must have the key columns."""
+def show_table(df: pd.DataFrame, columns: dict, hide_on_phone: tuple = ()):
+    """columns: source column -> header shown. Must contain 'Level' and 'Trend'; df must have the key columns.
+    hide_on_phone: source columns left out on phones (narrow screens)."""
+    if is_mobile():
+        columns = {k: v for k, v in columns.items() if k not in hide_on_phone}
     d = df[list(columns) + ["level_key", "trend_key"]].rename(columns=columns)
     st.dataframe(style_table(d, columns["Level"], columns["Trend"]), hide_index=True, width="stretch",
                  column_order=list(columns.values()), height=min(36 * len(d) + 42, 640))
@@ -164,16 +187,24 @@ def season_chart(series: pd.DataFrame, status_row, unit: str, height: int = 500)
                    linecolor="#D1D5DB"),
         yaxis=dict(title=dict(text=unit, standoff=12), automargin=True, gridcolor="#F0F0F0", rangemode="tozero",
                    range=[0, thr[-1]] if thr else None, zeroline=False))
+    if is_mobile():   # narrow screen: unit above the plot, legend below, every second month, shorter
+        fig.update_layout(height=430, margin=dict(l=4, r=6, t=34, b=4),
+                          legend=dict(orientation="h", yanchor="top", y=-0.12, x=0),
+                          xaxis=dict(tickvals=ticks[::2], ticktext=months[::2]),
+                          yaxis=dict(title=None))
+        fig.add_annotation(text=unit, xref="paper", yref="paper", x=0, y=1.0, xanchor="left", yanchor="bottom",
+                           showarrow=False, font=dict(size=CHART_FONT_PHONE, color=INK))
     return fig
 
 
 def polish(fig: go.Figure) -> go.Figure:
-    """Larger, consistent chart text."""
-    fig.update_layout(font=dict(color=INK, size=CHART_FONT, weight="bold"),
-                      hoverlabel=dict(font=dict(size=CHART_FONT, weight="bold")),
-                      legend=dict(font=dict(size=CHART_FONT, weight="bold")))
-    fig.update_xaxes(tickfont=dict(size=CHART_FONT, weight="bold"), title_font=dict(size=CHART_FONT, weight="bold"))
-    fig.update_yaxes(tickfont=dict(size=CHART_FONT, weight="bold"), title_font=dict(size=CHART_FONT, weight="bold"))
+    """Larger, consistent chart text (smaller on phones); no dragging, so a swipe scrolls the page."""
+    f = chart_font()
+    fig.update_layout(font=dict(color=INK, size=f, weight="bold"),
+                      hoverlabel=dict(font=dict(size=f, weight="bold")),
+                      legend=dict(font=dict(size=f, weight="bold")), dragmode=False)
+    fig.update_xaxes(tickfont=dict(size=f, weight="bold"), title_font=dict(size=f, weight="bold"), fixedrange=True)
+    fig.update_yaxes(tickfont=dict(size=f, weight="bold"), title_font=dict(size=f, weight="bold"), fixedrange=True)
     return fig
 
 

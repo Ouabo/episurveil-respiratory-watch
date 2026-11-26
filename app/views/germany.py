@@ -3,7 +3,7 @@ import streamlit as st
 
 from fluwatch.build import STATE_NAMES
 from fluwatch.i18n import t
-from fluwatch.ui import (polish, LEVEL_COLORS, add_keys, show_table, badge, data_date, lang, legend_html, level_label, load, season_chart,
+from fluwatch.ui import (PLOT_CONFIG, phone_height, polish, LEVEL_COLORS, add_keys, show_table, badge, data_date, lang, legend_html, level_label, load, season_chart,
                          sentence, states_geojson, trend_label)
 
 L = lang()
@@ -31,9 +31,9 @@ with left:
                         hover_data={"level_key": False, "iso": False, "Level": True, "Trend": True})
     fig.update_traces(marker_line_color="white", marker_line_width=1.5)
     fig.update_geos(fitbounds="locations", visible=False, projection_type="mercator")
-    fig.update_layout(height=640, margin=dict(l=0, r=0, t=0, b=0), showlegend=False)
+    fig.update_layout(height=phone_height(640, 430), margin=dict(l=0, r=0, t=0, b=0), showlegend=False)
     st.markdown(legend_html(), unsafe_allow_html=True)
-    st.plotly_chart(polish(fig), width="stretch", config={"displayModeBar": False}, theme=None)
+    st.plotly_chart(polish(fig), width="stretch", config=PLOT_CONFIG, theme=None)
 
 with right:
     opts = ["DE"] + sorted(states["state"], key=lambda k: STATE_NAMES[k])
@@ -46,7 +46,7 @@ with right:
     st.caption(t("as_of", L).format(date=data_date(row["date"])))
     st.markdown(f"**{t('chart_title', L)}**")
     st.plotly_chart(polish(season_chart(series[series["state"] == pick], row, t("u_per100k", L))), width="stretch",
-                    config={"displayModeBar": False}, theme=None)
+                    config=PLOT_CONFIG, theme=None)
     st.caption(t("bands_note", L))
 
 with st.expander(t("show_table", L)):
