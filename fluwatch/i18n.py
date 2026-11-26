@@ -11,6 +11,9 @@ T = {
     "nav_germany": {"en": "Germany", "de": "Deutschland"},
     "nav_city": {"en": "My city (wastewater)", "de": "Meine Stadt (Abwasser)"},
     "nav_about": {"en": "About the data", "de": "Über die Daten"},
+    "share_title": {"en": "Share this dashboard", "de": "Dieses Dashboard teilen"},
+    "share_body": {"en": "Scan the code with your phone camera, or copy the link:",
+                   "de": "Scannen Sie den Code mit der Handykamera oder kopieren Sie den Link:"},
 
     # levels and trends
     "low": {"en": "Low", "de": "Niedrig"},

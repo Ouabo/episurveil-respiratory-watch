@@ -1,0 +1,23 @@
+name: Keep apps awake
+
+# Streamlit Community Cloud puts apps to sleep after a period without visitors; a visitor (e.g. from a QR code)
+# then has to wake the app and wait. This job opens both EpiSurveil apps every 8 hours.
+on:
+  schedule:
+    - cron: "15 */8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  visit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install playwright && python -m playwright install --with-deps chromium
+      - run: python scripts/keep_awake.py

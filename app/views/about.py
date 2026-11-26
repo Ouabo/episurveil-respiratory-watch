@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import streamlit as st
 
 from fluwatch.i18n import t
@@ -16,6 +18,11 @@ for v in SOURCES.values():
     st.markdown(f"- [{v['name']}]({v['home']}) · {v['licence']}")
 for v in GEO_SOURCES.values():
     st.markdown(f"- {v}")
+
+st.subheader(t("share_title", L))
+st.markdown(t("share_body", L))
+st.code("https://episurveil-respiratory.streamlit.app/", language=None, wrap_lines=True)
+st.image(str(Path(__file__).resolve().parents[1] / "assets" / "qr_respiratory_watch.png"), width=220)
 
 m = meta()
 st.caption(f"{t('updated', L)}: {m['built_utc']} UTC")

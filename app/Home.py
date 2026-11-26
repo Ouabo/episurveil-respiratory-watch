@@ -19,6 +19,8 @@ st.markdown("""<style>
 html { font-size: 20px; }
 [data-testid="stMarkdownContainer"] p, [data-testid="stMarkdownContainer"] li { font-size: 1.05rem; line-height: 1.55; }
 [data-testid="stCaptionContainer"] p { font-size: 0.95rem; }
+/* page menu buttons: wrap onto several lines instead of running off the screen (newer Streamlit scrolls them) */
+[data-testid="stButtonGroup"], [data-testid="stButtonGroup"] > div, [data-testid="stButtonGroup"] > div > div { flex-wrap: wrap !important; overflow-x: visible !important; }
 .block-container, [data-testid="stMainBlockContainer"] { padding-left: 2rem; padding-right: 2rem; padding-top: 2.5rem; max-width: 1600px; }
 @media (max-width: 640px) {
   html { font-size: 17px; }
