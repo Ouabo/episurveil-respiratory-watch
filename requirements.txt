@@ -1,4 +1,4 @@
-streamlit>=1.46
+streamlit==1.56.0   # last Tornado-based release; 1.57+ (Starlette/uvicorn server) never loads on iOS 16 Safari/Chrome
 pandas>=2.0,<3
 pyarrow>=14
 plotly>=6.0
